@@ -2,17 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './screen/HomeScreen';
 
 
 const Stack = createNativeStackNavigator();
 
-const Home = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Home</Text>
-    </View>
-  )
-}
 
 const Main = ({navigation}) => {
   return (
@@ -66,10 +60,12 @@ export default App = () =>{
         <Stack.Screen 
           component={Main}
           name='Main'
+          options={{headerShown: false}}
         />
         <Stack.Screen 
-          component={Home}
+          component={HomeScreen}
           name='Home'
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
